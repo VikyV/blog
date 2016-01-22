@@ -1,4 +1,5 @@
 <?php
+// Architecture
 //si je met l'accès à cet endroit là ttes mes pages ont accès à la connexion et cela évite de charger en permance cette action
 // en incluant ce fichier
 include "config/config.inc.php";
