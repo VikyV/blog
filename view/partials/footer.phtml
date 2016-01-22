@@ -1,0 +1,64 @@
+<!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; My WONDERFULL Website 2016</p>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="view/js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="view/js/bootstrap.min.js"></script>
+
+    
+    <?php if("article" == $page):?>
+        <script src="view/js/jquery.raty.min.js"></script>
+        <script src="view/js/article.js"></script>
+    <?php endif;?>
+
+    <?php if("ajouterArticle" == $page):?>
+        <script src="view/js/jquery-ui.min.js"></script>
+        <script>
+            $(function() {
+                $( "#datepicker" ).datepicker(
+                    {dateFormat:'yy-mm-dd'});
+            });
+        </script>
+    <?php endif;?>
+
+
+    <?php if("inscription" == $page):?>
+
+    <script src="view/js/strength.min.js"></script>
+       
+        <script type="text/javascript">
+
+        $(document).ready(function($) {
+
+            $('#myPassword').strength({
+                strengthClass: 'strength',
+                strengthMeterClass: 'strength_meter',
+                strengthButtonClass: 'button_strength',
+                strengthButtonText: 'Show Password',
+                strengthButtonTextToggle: 'Hide Password'
+            });
+
+        });
+        </script>
+    <?php endif;?>
+
+
+
+
+
+    
+</body>
+
+</html>

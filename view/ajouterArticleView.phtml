@@ -1,0 +1,57 @@
+<?php include "partials/header.phtml"; ?>
+
+
+
+<?php if(!empty($_SESSION['messageFlash'])) : ?>
+	<p class="alert alert-success"><?= $_SESSION['messageFlash']; ?></p>
+<?php unset($_SESSION['messageFlash']); endif; ?>
+
+<style type="text/css">
+	
+</style>
+
+
+<!--manquait une div-->
+	<div class="col-lg-8">
+		<hr>
+	 <div class="well">
+	 	
+	<form method="POST" enctype="multipart/form-data" >
+		<label for ="titre">Ajouter un Titre
+			<br>
+	    <input type="text" name="titre" class="titre" 
+	          placeholder="titre" >
+	    <p></p>
+		<textarea id="description" name="description" class="description" rows="3" placeholder="Votre description" rows="6"></textarea>
+		<p></p>
+		<label for ="ajouterImage">
+		<?php ?>
+
+		<input type="file" name="nameImage" class="ajouterImage">
+		<p></p>
+		<label for ="dateArticle">
+		<input type="text" id="datepicker" name="dateArticle" min="01-12-2015" max="01-12-2050" placeholder="YYYY/MM/DD"></input>
+		<p></p>
+		<label for ="AuthorArt">
+	    <input type="text" name="AuthorArt" class="AuthorArt" placeholder="Votre Nom" rows="12"></input>
+		<p></p>
+		<label for ="categorie">Categorie d'Article
+	    <select name="categorie">
+	    <?php foreach($categoriA as$key =>$echoixcateg): ?>
+			<option value="<?= $echoixcateg['id'] ?>"><?= $echoixcateg['titre'] ?></option>
+		<?php endforeach; ?>
+		</select>
+		<p></p>
+	           
+	    <button type="submit" id="butonsubmit" class="btn btn-warning btn-lg-12">Submit</button>
+	             
+	 </form>
+
+</div>
+
+<hr>
+ <?php include "partials/Sidebar.phtml"; ?>
+
+        <hr>
+
+ <?php include "partials/footer.phtml"; ?>

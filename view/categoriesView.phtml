@@ -1,0 +1,32 @@
+<?php include "partials/header.phtml"; ?>
+
+            <div class="col-md-8">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-warning btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+          <div class="jumbotron">
+            <h1>Hello, world!</h1>
+            <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
+          </div>
+          
+
+          <div class="row">
+            
+            <?php foreach($categories as$key =>$sujetscateg): ?>
+              <div class="col-xs-6 col-lg-3">
+                <h2><?= $sujetscateg["titre"]?></h2>
+                <p><?= $sujetscateg["description"]?></p>
+                <p><a class="btn btn-warning" href="?page=unecategorie&id_cat=<?= $sujetscateg["id"]?>" role="button">View details »</a></p>
+              </div><!--/.col-xs-6.col-lg-4-->
+
+             <?php endforeach ;?>
+          
+          </div><!--/row-->
+       
+        </div>
+    <!--tu peux faire autant de duplicata que tu veux pour inclure des parties repetitives-->
+     <?php include "partials/Sidebar.phtml"; ?>
+
+        <hr>
+
+        <?php include "partials/footer.phtml"; ?>

@@ -1,0 +1,81 @@
+
+<?php include "partials/header.phtml"; ?>
+        <!-- Jumbotron Header -->
+        <header class="jumbotron hero-spacer">
+            <?php if(!empty($categorieArt[0])) : ?>
+                <h1><?= $categorieArt[0]['titre']; ?></h1>
+                <p><?= $categorieArt[0]['description']; ?></p>
+            <?php endif; ?>
+            
+            <p><a class="btn btn-warning btn-large">Call to action!</a>
+            </p>
+           
+        </header>
+
+        <hr>
+
+        <!-- Title -->
+        <div class="row">
+            <div class="col-lg-12">
+            	
+                <h3>Latest Features</h3>
+                <p>Il y a <?= $nbArtcategory ?> articles dans cette catégorie.</p>
+
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <!-- Page Features -->
+        <div class="row text-center">
+			<?php foreach($categorieArt as$key =>$categorieCitron): ?>
+
+	            <div class="col-md-3 col-sm-6 hero-feature">
+	                <div class="thumbnail">
+	                    <img src="view/images/<?= $categorieCitron["image"]?>"width= "800" height="500" alt="">
+	                    <div class="caption">
+	                        <h3><?= $categorieCitron["title"]?></h3>
+	                        <p><?= $categorieCitron["intro"]?></p>
+	                        <p>
+	                            <a href="#" class="btn btn-primary">Pretty Now!</a> <a href="?page=article&id-article=<?= $categorieCitron["id"]?>" class="btn btn-default">More Info</a>
+	                        </p>
+	                    </div>
+	                </div>
+	            </div>
+			<?php endforeach ;?>
+<!--
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="http://placehold.it/800x500" alt="">
+                    <div class="caption">
+                        <h3>Feature Label</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <p>
+                            <a href="#" class="btn btn-primary">lala Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+           
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <img src="http://placehold.it/800x500" alt="">
+                    <div class="caption">
+                        <h3>Feature Label</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <p>
+                            <a href="#" class="btn btn-primary">Show me now!</a> <a href="#" class="btn btn-default">More Info</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            -->
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <?php include "partials/footer.phtml"; ?>

@@ -1,0 +1,34 @@
+BONUS:
+1) Lorsqu'on est connecté mettre le nom de la personne dans l'input auteur d'un commentaire
+
+2) Faire le formulaire de recherche
+
+
+
+var_dump(password_hash('admin', PASSWORD_DEFAULT));
+die;
+
+
+https://github.com/ablanco/jquery.pwstrength.bootstrap
+https://cdn.rawgit.com/ablanco/jquery.pwstrength.bootstrap/master/examples/
+
+OU
+
+http://jquerycards.com/forms/inputs/strength-js/
+
+
+
+Indication pour l'inscription d'un utilisateur
+1) Vérifier que $_POST n'est pas vide
+
+	2) Créer le tableau $errors à vide
+    
+    3) Vérifier que tous les champs ne sont pas vide, que l'email est bien un email et que le mot de passe fait bien 6 caractère minimum
+    
+    4) Si $errors est vide
+    
+    	5) Création du mot de passe grâce à la fonction password_hars
+        
+        6) INSERT INTO sur la table utilisateur
+        
+        7) redirection et die

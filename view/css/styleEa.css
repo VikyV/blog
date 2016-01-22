@@ -1,0 +1,101 @@
+/*
+Spinning Globe using PureCSS3
+
+Tutorial & Image by: http://uxblog.idvsolutions.com/2012/03/how-to-fake-spinning-globe-in-html5.html
+HTML & CSS by: Designil
+
+*/
+
+@keyframes mapfront_spin {
+  0% {
+    background-position: 1400px 0%;
+  }
+  
+  100% {
+    background-position: 0 0%;
+  }
+}
+
+@keyframes mapback_spin {
+  0% {
+    background-position: 0 0%;
+  }
+  
+  100% {
+    background-position: 1400px 0%;
+  }
+}
+
+@-webkit-keyframes mapfront_spin {
+  0% {
+    background-position: 1400px 0%;
+  }
+  
+  100% {
+    background-position: 0 0%;
+  }
+}
+
+@-webkit-keyframes mapback_spin {
+  0% {
+    background-position: 0 0%;
+  }
+  
+  100% {
+    background-position: 1400px 0%;
+  }
+}
+#earth {
+  margin-left: 25%;
+  /*background: #000;*/
+  width :1000px;
+}
+
+.globe {
+  width: 400px;
+  height: 400px;
+  position: relative;
+}
+
+.front {
+  width: 400px;
+  height: 400px;
+  background: url(http://dl.dropboxusercontent.com/u/17180596/SphereForeground.png);
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.back {
+  width: 400px;
+  height: 400px;
+  background: url(http://dl.dropboxusercontent.com/u/17180596/SphereBackground.png);
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.mapfront, .mapback {
+  border-radius: 300px;
+  width: 340px;
+  height: 340px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 4;
+}
+
+.mapfront {
+  background: url(http://dl.dropboxusercontent.com/u/17180596/CartoForeground.png) repeat-x;
+  -webkit-animation: mapfront_spin 15s linear infinite;
+  animation: mapfront_spin 15s linear infinite;
+}
+
+.mapback {
+  background: url(http://dl.dropboxusercontent.com/u/17180596/CartoBackground.png) repeat-x;
+  position: absolute;
+  -webkit-animation: mapback_spin 15s linear infinite;
+  animation: mapback_spin 15s linear infinite;
+}

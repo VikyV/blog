@@ -1,0 +1,73 @@
+Formulaire de connexion :
+https://github.com/ablanco/jquery.pwstrength.bootstrap
+https://cdn.rawgit.com/ablanco/jquery.pwstrength.bootstrap/master/examples/
+
+var_dump(password_hash('admin', PASSWORD_DEFAULT));
+die();
+
+
+1) Vérifier que $_POST n'est pas vide
+
+	
+    2) Créer un tableau $errors vide
+
+	
+    3) Vérifier que l'email et le mot de passe ne sont pas vide
+    
+    
+    4) Vérifier que l'email est un email valide avec la fonction filter_var()
+    
+    
+    5) S'il n'y a pas d'erreur :
+
+		
+        6) Requête SQL permettant de récupérer un utilisateur en fonction uniquement de l'email
+        
+        
+        7) S'il y a un utilisateur, vérifier le mot de passe de l'utilisateur récupéré avec la fonction password_verify()
+        
+        
+        8) Si le mot de passe est bon : die('connexion utilisateur');
+if (!empty($_POST)
+{
+	$errors = [];
+    
+    if (empty($_POST['login']))
+    {
+    	$errors['login'] = "Veuillez rentrer un email";
+    }
+    else if (filter_var($_POST['login'], FILTER_VALIDATE_EMAIL) == false)
+    {
+    	$errors['login'] = "Veuillez rentrer un email valide";
+    }
+    
+    
+    if (empty($_POST['password']))
+    {
+    	$errors['password'] = "Veuillez rentrer un mot de passe";
+    }
+    
+    if (empty($errors))
+    {
+    	// REQUETE SQL
+    }
+}
+
+http://jquerycards.com/forms/inputs/strength-js/
+
+
+
+Indication pour l'inscription d'un utilisateur
+1) Vérifier que $_POST n'est pas vide
+
+	2) Créer le tableau $errors à vide
+    
+    3) Vérifier que tous les champs ne sont pas vide, que l'email est bien un email et que le mot de passe fait bien 6 caractère minimum
+    
+    4) Si $errors est vide
+    
+    	5) Création du mot de passe grâce à la fonction password_hars
+        
+        6) INSERT INTO sur la table utilisateur
+        
+        7) redirection et die

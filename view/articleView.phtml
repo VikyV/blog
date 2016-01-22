@@ -1,0 +1,109 @@
+<?php include "partials/header.phtml"; ?>
+
+    
+
+
+            <!-- Blog Post Content Column -->
+            <div class="col-lg-8">
+             
+                <!-- Blog Post 
+                Afficher la catégorie dans la page article (lien compris)
+            --><!--
+                <p> <?=$article//['categorie_id']if($article['categorie_id']==1) {
+                    //echo "Vous êtes dans la catégorie")            }-->
+
+                ?></p>
+
+                <!-- Title -->
+                <h1><?= $article['title'] ?></h1>
+
+                <!-- Author -->
+                <p class="lead">
+                    by <a href="#"><?= $article['author'] ?></a>
+                </p>
+
+                <hr>
+
+                <!-- Date/Time -->
+                <p><span class="glyphicon glyphicon-time"></span> Posted on <?= $article['date_creation'] ?></p>
+
+                <hr>
+
+                <!-- Preview Image -->
+               <img class="img-responsive"  src="view/images/<?= $article['image']?>"alt="image illustrant l'Article">
+
+                <hr>
+
+                <!-- Post Content -->
+                <p class="lead"></p>
+                <p><?= $article['description'] ?> </p>
+                 
+                <hr>
+                <div class="row">
+        <div class="col-lg-9">
+<ul class="list-unstyled">
+                <li><span>Pinterest &nbsp;</span>
+<a data-pin-do="buttonPin" data-pin-count="beside" data-pin-tall="true" href="https://www.pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.flickr.com%2Fphotos%2Fkentbrew%2F6851755809%2F&media=https%3A%2F%2Ffarm8.staticflickr.com%2F7027%2F6851755809_df5b2051c9_z.jpg&description=Next%20stop%3A%20Pinterest"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_28.png" /></a>
+</li>
+</ul>
+</div>
+</div>
+                <hr>
+                <!-- Blog Comments -->
+
+                <!-- Comments Form -->
+                <div class="well">
+                    <h4>Leave a Comment:</h4>
+                    <form name="form" class="form-group" method="POST" id="formCom">
+                      <label for ="name">
+                      <input type="text" name="name" class="name" class="col-lg-12" placeholder="Votre Nom" >
+
+                      <div class="icones-smile" class="col-lg-12"></div>
+                      <!--<input type="number" name="note" min="0" max="10" class="number" placeholder="votre Note">-->
+                        <textarea id="contenu" name="contenu" class="form-control" class="col-lg-12" placeholder="Votre commentaire"></textarea>
+                       
+                    <button type="submit" class="btn btn-warning btn-lg-12">Submit</button>
+                         </div>
+                    </form>
+                
+
+                <hr>
+
+                <!-- Posted Comments -->
+
+                <!-- Comment -->
+                 
+                <div class="media">
+
+                   <?php foreach($formulle as$key =>$formCome): ?>
+                        <a class="pull-left" href="#">
+                        <img class="media-object" src="http://loremflickr.com/64/64/city" alt="image aléatoire de ville">
+                    </a>
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">
+                                
+                                    <?= $formCome["auteur"]?>
+                                <small><?= $formCome["date_creation"]?> </small>
+                                <p class="scorenote" id="<?= uniqid() ?>" data-note=<?= $formCome["note"]?>></p>
+                                <p><?= $formCome["contenu"]?></p>
+                            </h4>
+                        </div>
+                    <?php endforeach ;?>
+                </div>
+
+
+                
+                 <div class="test-loup" style="margin: 0 auto; width:100%; height:400px" >
+                        <object type="text/html" data="{{path}}"
+                                style="width:100%; height:100%; margin:1%;">
+                        </object>
+                    </div>
+
+            </div>
+
+      <?php include "partials/Sidebar.phtml"; ?>
+
+        <hr>
+
+         <?php include "partials/footer.phtml"; ?>

@@ -1,0 +1,53 @@
+<?php include "partials/header.phtml"; ?>
+
+
+<body>
+
+    <div class="container">
+
+      <form class="form-signin" name='Inscription' method='POST'>
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <br>
+        
+        <label for="inputNom" class="sr-only">Nom</label>
+         <input type="text" id="inputNom" name ="inputNom" class="form-control" placeholder="Votre Nom" required autofocus>
+        <?php 	if(!empty ($errors["inputNom"]))
+			{echo"Veuillez entrer un nom";  }?>
+        <br>
+        <label for="inputPrenom" class="sr-only">Prénom</label>
+        <input type="text" id="inputPrenom" name ="inputPrenom"class="form-control" placeholder="Votre Prénom" required autofocus>
+        <?php 	if(!empty ($errors["inputPrenom"]))
+			{echo"Veuillez entrer un prénom";  }?>
+        <br>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        
+        <br>
+        <label for="myPassword" class="sr-only">Password</label>
+        <input type="password" id="myPassword" name="inputPassword" value="" placeholder="Votre mot de passe">
+        <br>
+
+         <label for="inputConfirmsword" class="sr-only">ConfirmPassword</label>
+        <input type="password" id="inputConfirmsword" name ="inputConfirmsword" class="form-control" placeholder="Confirm Password" required>
+        <?php   if(!empty ($errors["inputConfirmsword"]))
+            {echo $errors["inputConfirmsword"];  }?>
+
+        <br>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-info btn-block" type="submit">Sign in</button>
+      </form>
+
+    </div> <!-- /container -->
+<br>
+<br>
+<hr>
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    
+ <?php include "partials/footer.phtml"; ?>
+

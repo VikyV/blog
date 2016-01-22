@@ -1,0 +1,90 @@
+<!-- on inclut ici le header en ouvrant le html dans l'autre doc, 
+    pas besoin d'ouvrir le html car ile st ouvert ailleurs-->
+<?php include "partials/header.phtml"; ?>
+
+ <div class="col-md-8">
+<?php include "partials/slider.phtml"; ?>
+</div>
+            <!-- Blog Entries Column -->
+            <div class="col-md-8">
+
+                <h1 class="page-header">
+                    ACCUEIL
+                    <small>Articles</small>
+                </h1>
+               
+                <!-- First Blog Post -->
+                <?php foreach($articles as$key=>$sujets): ?> 
+                        <h2><?= $sujets["title"]?>
+                    <a href="#"></a>
+                </h2>
+                <p class="lead">
+                    by <a href="index.php"><?= $sujets["author"]?></a>
+                </p>
+                <p><span class="glyphicon glyphicon-time"></span> Posted on <?= $sujets["date_creation"]?></p>
+                
+                 <!-- reformaterttes lesimages -->
+                <img class="img-responsive"  src="view/images/<?= $sujets["image"]?> "alt="image illustrant l'article">
+                <br>
+                <p><?= $sujets["intro"]?></p>
+
+                <a class="btn btn-primary" href="?page=article&id-article=<?=$sujets["id"]?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                 <hr>
+                <?php endforeach ;?>
+                <hr>
+
+                
+                <!-- Second Blog Post -->
+                <h2>
+                    <a href="#">Blog Post Title</a>
+                </h2>
+                <p class="lead">
+                    by <a href="index.php">Start Bootstrap</a>
+                </p>
+                <p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:45 PM</p>
+                <hr>
+                <div class="col-md-12">
+                    <div id="loup">
+                <div class="img-responsive" style= width:"100%" height:"250px" >
+                     <?php include "view/images/svg-clip-path-with-blend-mode/test-loup.html"; ?>
+                 </div>
+                 </div>
+                 </div>
+                <!--<img class="img-responsive" src="http://placehold.it/900x300" alt=""> -->
+                <!-- <div class="img-responsive" style="margin: 0 auto; width:100%; height:300px" >
+                        <object type="text/html" data=" view/images/svg-clip-path-with-blend-mode/test-loup.html"
+                                style="width:100%; height:100%; margin:0%;">
+                        </object>
+                    </div> -->
+                <hr>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, quasi, fugiat, asperiores harum voluptatum tenetur a possimus nesciunt quod accusamus saepe tempora ipsam distinctio minima dolorum perferendis labore impedit voluptates!</p>
+                <a class="btn btn-primary" href="?page=article">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+
+                <hr>
+
+                
+
+            
+
+                <!-- Pager -->
+                <ul class="pager">
+                    <li class="previous">
+                    <?php $page= ceil($Pagination);
+
+//je calcule ici dynamikemnt le nb art/ page.
+         for($i=1; $i <=$page; $i++)
+         {
+            echo"<a href='?num=".$i."'> ".$i."</a>&nbsp;";      
+         }?>
+
+                    
+                    </li>
+                </ul>
+
+            </div>
+
+        <?php include "partials/Sidebar.phtml"; ?>
+
+        <hr>
+
+        <?php include "partials/footer.phtml"; ?>
